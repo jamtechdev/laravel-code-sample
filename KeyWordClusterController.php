@@ -292,9 +292,9 @@ class KeyWordClusterController extends Controller
     public function webhooks(Request $request){
         try {
 
-            $secret_sign_key = 'Keam1oFqG1I9UT7oX7IgUElLN1bvyBU';
+            $secret_sign_key = 'TFGFFGGHHHJHJJJNNGGFFVVVVFFFGHHGGGGG';
             $webhook_content = file_get_contents('php://input'); //raw webhook request body
-            $received_signature = $_SERVER["HTTP_X_SERPHOUSE_SIGNATURE"];
+            $received_signature = $_SERVER["HTTP_X_SIGNATURE"];
             $expected_signature = hash_hmac('sha256', $webhook_content, $secret_sign_key);
 
             if($expected_signature != $received_signature) {
